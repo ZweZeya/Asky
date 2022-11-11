@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Home from './components/Home'
+import Register from './components/Register'
+import Login from './components/Login'
+import Profile from './components/Profile'
+import Connect from './components/Connect'
+import Activity from './components/Activity'
+import Error from './Error'
+import { UserContext } from './Context'
 
-function App() {
+
+export default function App() {
+  const user = useContext(UserContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Routes>
+          {user ? 
+            <>
+              <Route exact path="/profile" element={<Profile />} />
+              <Route exact path="/connect" element={<Connect />} />
+              <Route exact path="/activity" element={<Activity />} />
+            </>
+          :
+            <>
+              <Route exact path="/register" element={<Register />}/>
+              <Route exact path="/login" element={<Login />} />
+            </>
+          }
+          <Route exact path="/" element={<Home />} /> 
+          <Route path="*" element={<Error />} />        
+        </Routes>
+    </Router>
   );
 }
 
-export default App;
+

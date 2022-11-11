@@ -1,0 +1,161 @@
+/* General Elements */
+body {
+    background-color: #EEF2E6;
+    background-image: url("always-grey.png");
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Layout Elements */
+.layout-body {
+    margin: 0 2%;
+}
+
+/* Navigation Elements */
+.nav-main {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: #1C6758;
+    padding: 1% 1% 1% 2%;
+    margin-bottom: 2.5%;
+}
+
+.nav-items {
+    margin-left: auto;
+    margin-right: 0;
+    padding: 0 1.5% 0 3%;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.3rem;
+    
+}
+
+.nav-brand {
+    font-family: 'Leckerli One', cursive;
+    color: #EEF2E6;
+    font-size: 1.9rem;
+}
+
+.nav-item {
+    font-size: 1.2rem;
+    color: #EEF2E6;
+}
+
+/* Register and Login Elements */
+.register-main {
+    text-align: center;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-form input {
+    width: 10rem;
+    margin: 1%;
+    padding: 1%;
+}
+
+.login-btn {
+    margin: 1%;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #1C6758;
+    color: #EEF2E6;
+}
+
+.login-btn:hover {
+    background-color: #3D8361;
+}
+
+.register-err-msg {
+    color: red;
+}
+
+/* Home Elements */
+/* .home-unauth-form {
+    background-color: #D6CDA4;
+    padding: 1rem 1.5rem 0;
+    border-radius: 7px; 
+} */
+
+.home-unauth-btn a {
+    color: #EEF2E6;
+}
+
+.home-unauth-btn {
+    background-color: #1C6758;
+    width: 5rem;
+    padding: 0.5rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    border-radius: 7px;
+}
+
+.home-unauth-btn:hover{
+    background-color: #3D8361;
+}
+
+.home-unauth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Profile Elements */
+.profile-main {
+    display: grid;
+    grid-template-columns: 73% 22%;
+    column-gap: 3%;
+}
+
+.profile-create:hover {
+    color: #1C6758;
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.post-form-input {
+    margin: 0.5rem 0;
+    padding: 0.3rem;
+}
+
+.post-form button {
+    width: 4rem;
+    margin-left: 0;
+}
+
+.profile-friends {
+    border-left: solid black;
+    padding: 0 0 0 7%;
+}
+
+/* Connect Elements */
+.connect-main {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.search-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 35%;
+}
+
+.search-user button {
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+}
