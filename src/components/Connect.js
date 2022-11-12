@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Layout from './Layout';
+import Layout from '../Layout';
 import axios from 'axios';
 import SearchUser from './SearchUser'
 import RequestReceived, { RequestSent } from './Requests';

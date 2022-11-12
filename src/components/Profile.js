@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react'
-import Layout from './Layout'
+import Layout from '../Layout'
 import axios from 'axios'
 import { UserContext } from '../Context'
-import Post from './Post'
+import PostProfile from './PostProfile'
 import Friend from './Friend'
 
 
@@ -83,7 +83,7 @@ export default function Profile() {
 
     // Map all the of the user's posts to a custom Post element
     const postElements = posts.map(item => 
-        <Post
+        <PostProfile
             key={item._id}
             title={item.title}
             content={item.content} 

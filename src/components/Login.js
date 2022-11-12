@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Layout from './Layout'
+import Layout from '../Layout'
 import axios from 'axios';
 
 export default function Login() {

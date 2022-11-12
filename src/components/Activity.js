@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from 'react'
-import Layout from './Layout'
+import Layout from '../Layout'
 import axios from 'axios'
-import PostOther from './PostOther';
+import PostActivity from './PostActivity';
 
 export default function Activity() {
 
     // Storing all of the friends posts in a state
     const [posts, setPosts] = useState([]);
-
+    
     // Send http requests to server on page load
     useEffect(() => {
+        // Sort the posts according to the dates in ascending order
+        posts.sort((a, b)  => {
+            if (a.datePosted < b.datePosted) {
+                return 1;
+            } else if (a.datePosted > b.datePosted) {
+                return -1;
+            } else {
+                return 0;
+            }
+        });                
         // Retrieve the list of friends from server through a get request
         axios({
             method: 'get',
@@ -36,28 +46,20 @@ export default function Activity() {
                         })
                         return newPosts;
                     })
+
                 })
                 .catch(err => console.log(err.message))
             })
         })
         .catch(err => console.log(err.message))
 
-        // Sort the posts according to the dates in ascending order
-        posts.sort((a, b)  => {
-            if (a.datePosted < b.datePosted) {
-                return 1;
-            } else if (a.datePosted > b.datePosted) {
-                return -1;
-            } else {
-                return 0;
-            }
-        });
-    }, [])
+    }, [posts])
 
     const postElements = posts.map(post => {
         return (
-            <PostOther
+            <PostActivity
                 key={post._id}
+                id={post._id}
                 title={post.title}
                 content={post.content}
                 author={post.author}

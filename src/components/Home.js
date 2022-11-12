@@ -1,8 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Layout from './Layout'
+import Layout from '../Layout'
 import { UserContext } from '../Context'
-import axios from 'axios';
 
 export default function Home() {
     // Checking if user is logged in

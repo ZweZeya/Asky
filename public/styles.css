@@ -159,3 +159,22 @@ a {
     background-color: transparent;
     margin-left: auto;
 }
+
+/* Activity Elements */
+.activity-post {
+    max-height: 10rem;
+    overflow: auto;
+}
+
+.activity-replies-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.activity-replies {
+    max-height: 6rem;
+    overflow: auto;
+    background-color: #3D8361;
+}

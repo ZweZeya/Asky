@@ -6,6 +6,7 @@ import Login from './components/Login'
 import Profile from './components/Profile'
 import Connect from './components/Connect'
 import Activity from './components/Activity'
+import PostPage from './components/PostPage'
 import Error from './Error'
 import { UserContext } from './Context'
 
@@ -20,6 +21,7 @@ export default function App() {
               <Route exact path="/profile" element={<Profile />} />
               <Route exact path="/connect" element={<Connect />} />
               <Route exact path="/activity" element={<Activity />} />
+              <Route exact path="/posts/:id" element={<PostPage />} />
             </>
           :
             <>
